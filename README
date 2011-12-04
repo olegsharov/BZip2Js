@@ -1,0 +1,11 @@
+- Java BZip2Compressor ported to JavaScript.
+- Requires support of Int8Array, Int16Array, Int32Array
+- Assumes that input is string (its is using charCodeAt on write)
+- See BZip2.toBzip helper method for usage details
+- Does not do decompression (codemonkeys are wellcome to add support for that)  
+
+Java doc
+http://commons.apache.org/compress/apidocs/org/apache/commons/compress/compressors/bzip2/BZip2CompressorOutputStream.html
+
+ArrayBuffer to base64 
+https://gist.github.com/958841

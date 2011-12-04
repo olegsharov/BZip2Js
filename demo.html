@@ -1,0 +1,30 @@
+<script src="BZip2.js"></script>
+<style>
+	* { font-size: 10pt; font-family: Verdana;}
+</style>
+<textarea id="bzip_input" style="width: 600px; height: 200px">
+</textarea>
+<br>
+<br>
+<button onclick="compress();">Compress</button>
+<div id="info"></div>
+<br>
+<br>
+<textarea id="bzip_output" style="width: 600px; height: 200px">
+</textarea>
+<br>
+You can decode command line:<br>
+<br>
+<div id="cmd_line">
+echo "" | base64 -D | bzip2 -d
+</div>
+
+<script>
+	function compress() { 
+	    var input = document.getElementById('bzip_input').value;
+		var output = BZip2.toBase64(input);
+		document.getElementById('bzip_output').innerHTML = output;
+		document.getElementById('info').innerHTML = "Input:" + input.length + " bytes<br>Output: " + output.length + " bytes";
+		document.getElementById('cmd_line').innerHTML = 'echo "' + output + '" | base64 -D | bzip2 -d';
+	}
+</script>
